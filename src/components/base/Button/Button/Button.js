@@ -33,12 +33,7 @@ const defaultProps = {
 };
 
 const Button = ({
-  classes,
-  children,
-  tag: Com,
-  color,
-  className,
-  ...rest
+  classes, children, tag: Com, color, className, ...rest
 }) => {
   const buttonAttributes = { ...rest };
   buttonAttributes.className = classNames(
@@ -50,7 +45,12 @@ const Button = ({
     delete buttonAttributes.type;
   }
 
-  return <Com {...buttonAttributes}>{children}</Com>;
+  return (
+    <Com {...buttonAttributes}>
+      <span className={classes.reveal} />
+      <span className={classes.children}>{children}</span>
+    </Com>
+  );
 };
 
 Button.propTypes = propTypes;

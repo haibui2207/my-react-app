@@ -32,6 +32,11 @@ Setting up basic project with bootstrap and redux saga
 > 2. react-flip-toolkit
 
 > 3. react-animate-on-scroll
+
+# # Reference template
+
+> 1. http://en.momentomultimedia.com/
+
 # # How to run?
 
 > 1. Clone repositiory

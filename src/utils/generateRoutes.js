@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Redirect } from 'react-router';
 
 /**
+ * Generate routes
  * @param routes is an object extends from RouteProps and RedirectProps
  * with more args
  * - isRedirect: boolean - in case using Redirect
@@ -17,7 +18,7 @@ const generateRoutes = (routes) => {
       return <Redirect key={title} {...rest} />;
     }
 
-    return <Route key={title} {...rest} />;
+    return <Route key={title || rest.path} {...rest} />;
   });
 };
 

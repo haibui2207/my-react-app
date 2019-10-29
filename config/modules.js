@@ -59,7 +59,7 @@ function getAdditionalModulePaths(options = {}) {
 /**
  * Get webpack aliases based on the baseUrl of a compilerOptions object.
  *
- * @param {*} options
+ * @param options
  */
 function getWebpackAliases(options = {}) {
   const baseUrl = options.baseUrl;
@@ -80,7 +80,7 @@ function getWebpackAliases(options = {}) {
 /**
  * Get jest aliases based on the baseUrl of a compilerOptions object.
  *
- * @param {*} options
+ * @param options
  */
 function getJestAliases(options = {}) {
   const baseUrl = options.baseUrl;

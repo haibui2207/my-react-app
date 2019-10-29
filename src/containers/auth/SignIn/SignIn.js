@@ -1,24 +1,26 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import injectSheet from 'react-jss';
 
+import { loadLazyComponent } from '../../../HOCs';
 import loginBg from '../../../assets/images/login-bg.jpg';
 
 import styles from './signIn.styles';
 
-const SignInForm = lazy(
-  () => new Promise((resolve) => {
-    setTimeout(() => resolve(import('./SignInForm')), 500);
-  }),
-);
+const SignIn = ({ classes }) => {
+  const SignInForm = loadLazyComponent(() => import('./SignInForm'), 3000);
 
-const SignIn = ({ classes }) => (
-  <div className={classes.root} style={{ backgroundImage: `url(${loginBg})` }}>
-    <Suspense fallback={<div>Loading...</div>}>
-      <SignInForm />
-    </Suspense>
-  </div>
-);
+  return (
+    <div
+      className={classes.root}
+      style={{ backgroundImage: `url(${loginBg})` }}
+    >
+      <div className={classes.form}>
+        <SignInForm />
+      </div>
+    </div>
+  );
+};
 
 SignIn.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,

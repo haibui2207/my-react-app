@@ -1,3 +1,9 @@
+/**
+ * Convert hex color to rgba color
+ * @param hex string
+ * @param opacity number from 0 to 1
+ *
+ */
 const hexToRgbA = (hex, opacity) => {
   let char;
   if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
@@ -7,7 +13,8 @@ const hexToRgbA = (hex, opacity) => {
     }
     char = `0x${char.join('')}`;
 
-    const alpha = !opacity || opacity < 0 || opacity > 1 ? 1 : opacity;
+    // eslint-disable-next-line no-restricted-globals
+    const alpha = isNaN(opacity) || opacity < 0 || opacity > 1 ? 1 : opacity;
 
     /* eslint-disable no-bitwise */
     return `rgba(${[

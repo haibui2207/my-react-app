@@ -1,4 +1,5 @@
-import hexToRgbA from '../../../utils/hexToRgbA';
+import { THEME } from '../../../constants';
+import { hexToRgbA } from '../../../utils';
 
 export default {
   root: {
@@ -9,6 +10,13 @@ export default {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    boxShadow: `inset 0px 0px 0px 2000px ${hexToRgbA('#757575', 0.3)}`,
+    boxShadow: `inset 0px 0px 0px 2000px ${hexToRgbA(THEME.color.gray, 0.4)}`,
+    fontFamily: '"Lobster", cursive, Roboto, "sans-serif"',
+  },
+  form: {
+    width: '100%',
+    maxWidth: 450,
+    margin: 'auto',
+    padding: [0, 10],
   },
 };

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import injectSheet from 'react-jss';
 
-import generateGrid from '../../../../utils/generateGrid';
+import { generateGrid, generateId } from '../../../../utils';
 
 import styles from './input.styles';
 
@@ -16,11 +16,13 @@ const propTypes = {
   /** @ignore Default button styles */
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   /** Input label */
-  label: PropTypes.string.isRequired,
+  label: PropTypes.node.isRequired,
   /** Input type */
   type: PropTypes.string,
   /** Custom styles */
   className: PropTypes.string,
+  /** Input label */
+  style: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /** Grid */
   grid: PropTypes.shape({
     xs: PropTypes.number,
@@ -34,17 +36,32 @@ const propTypes = {
 const defaultProps = {
   type: 'text',
   className: null,
-  grid: undefined,
+  style: null,
+  grid: null,
 };
 
 const Input = ({
-  classes, label, className, grid, ...rest
-}) => (
-  <div className={classNames(classes.root, generateGrid(grid), className)}>
-    <label htmlFor="a" className={classes.label}>{label}</label>
-    <input className={classes.input} {...rest} />
-  </div>
-);
+  classes, label, className, style, grid, ...rest
+}) => {
+  const id = generateId();
+
+  return (
+    <div
+      style={style}
+      className={classNames(classes.root, generateGrid(grid), className)}
+    >
+      <input
+        {...rest}
+        id={id}
+        className={classes.input}
+        autoComplete={rest.autoComplete}
+      />
+      <label htmlFor={id} className={classes.labelWrapper}>
+        <span className={classes.labelContent}>{label}</span>
+      </label>
+    </div>
+  );
+};
 
 Input.propTypes = propTypes;
 Input.defaultProps = defaultProps;

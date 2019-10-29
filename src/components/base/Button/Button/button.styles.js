@@ -1,76 +1,63 @@
 import { THEME } from '../../../../constants';
 
 const btnDefaultAttribute = {
-  alignItems: 'center',
-  border: 'none',
-  borderRadius: 9999,
-  cursor: 'pointer',
-  display: 'inline-flex',
+  height: 45,
   flex: 'none',
-  fontSize: 20,
-  height: 52,
-  justifyContent: 'center',
-  maxWidth: 200,
-  position: 'relative',
-  textAlign: 'center',
-  textDecoration: 'none',
-  textTransform: 'uppercase',
-  transition: 'all 0.5s ease',
-  userSelect: 'none',
+  fontSize: 16,
   width: '100%',
+  maxWidth: 200,
+  border: 'none',
+  cursor: 'pointer',
+  overflow: 'hidden',
+  fontWeight: 'bold',
+  userSelect: 'none',
+  textAlign: 'center',
+  position: 'relative',
+  alignItems: 'center',
+  borderRadius: [0, 20],
+  display: 'inline-flex',
+  textDecoration: 'none',
+  justifyContent: 'center',
+  textTransform: 'uppercase',
+  transition: THEME.transition,
   '&:focus': { outline: 'none' },
 };
 
-const btnHoverEffect = {
-  '&:before, &:after': {
-    background: 'inherit',
-    borderRadius: 'inherit',
-    content: '""',
-    height: '100%',
-    left: 0,
-    position: 'absolute',
-    top: 0,
-    transition: 'inherit',
-    width: '100%',
-    zIndex: -1,
-  },
-  '&:after': { opacity: 0.5 },
-  '&:hover': {
-    boxShadow: THEME.boxShadow,
-    textDecoration: 'none',
-    transform: 'translateY(-3px)',
-    '&:after': {
-      opacity: 0,
-      transform: 'scale(1.3, 1.5)',
-    },
-  },
-};
-
-const renderButton = (color, background, border = false) => ({
-  color,
-  background,
-  border: !border ? 'none' : `3px solid ${color}`,
-});
+const renderButton = (color, background) => ({ color, background });
 
 export default {
   root: {
-    extend: [btnDefaultAttribute, btnHoverEffect],
+    ...btnDefaultAttribute,
+    '&:hover': {
+      '& $reveal': { width: '100%' },
+      '& $children': { marginLeft: 8 },
+    },
   },
+  reveal: {
+    top: 0,
+    left: 0,
+    width: 0,
+    height: '100%',
+    position: 'absolute',
+    transition: THEME.transition,
+    backgroundColor: THEME.color.pink,
+  },
+  children: { transition: THEME.transition, zIndex: 2 },
   default: {
-    ...renderButton(THEME.color.black70, THEME.color.white, true),
+    ...renderButton(THEME.color.white, THEME.color.black),
   },
-  primary: {
-    ...renderButton(THEME.color.white, THEME.color.primary),
-  },
-  secondary: {
-    ...renderButton(THEME.color.white, THEME.color.secondary),
-  },
-  gradient: {
-    ...renderButton(
-      THEME.color.white,
-      `
-        linear-gradient(135deg,${THEME.color.primary}, ${THEME.color.secondary})
-      `,
-    ),
-  },
+  // primary: {
+  //   ...renderButton(THEME.color.white, THEME.color.primary),
+  // },
+  // secondary: {
+  //   ...renderButton(THEME.color.white, THEME.color.secondary),
+  // },
+  // gradient: {
+  //   ...renderButton(
+  //     THEME.color.white,
+  //     `
+  //    linear-gradient(135deg,${THEME.color.primary}, ${THEME.color.secondary})
+  //     `,
+  //   ),
+  // },
 };

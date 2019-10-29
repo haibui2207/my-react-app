@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import injectSheet from 'react-jss';
 import { compose } from 'redux';
-import { connect } from 'react-redux';
 import { Fade } from 'react-reveal';
+import { connect } from 'react-redux';
 
 import { Form } from '../../../../components/base/Form';
 import { Input } from '../../../../components/base/Input';
@@ -20,19 +20,19 @@ const SignInForm = ({ classes, submit }) => {
   };
 
   return (
-    <Form
-      className={classes.root}
-      autoComplete="off"
-      onChange={(e) => console.log(e.target)}
-    >
-      <Fade right big cascade>
+    <Form className={classes.root} autoComplete="off">
+      <Fade bottom cascade>
         <h1 className={classes.title}>Login</h1>
         <div>
           {fields.map((input) => (
-            <Input key={input.label} {...input} onChange={handleChange} />
+            <Input {...input} key={input.label} onChange={handleChange} />
           ))}
-          <Button color="gradient" onClick={() => submit({ name: 'abc' })}>
-            Submit form
+          <Button
+            className={classes.button}
+            color="gradient"
+            onClick={() => submit({ name: 'abc' })}
+          >
+            Submit
           </Button>
         </div>
       </Fade>

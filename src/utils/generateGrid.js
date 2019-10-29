@@ -1,12 +1,16 @@
 /**
- * @param grid is an object with format
- * grid: PropTypes.shape({
-    xs: PropTypes.number,
-    sm: PropTypes.number,
-    md: PropTypes.number,
-    lg: PropTypes.number,
-    xl: PropTypes.number,
-  }),
+ * Generate bootstrap grid class
+ *
+ * @param grid object
+ *
+ * grid: {
+ *   xs: number,
+ *   sm: number,
+ *   md: number,
+ *   lg: number,
+ *   xl: number,
+ * }
+ *
  */
 const generateGrid = (grid) => (grid
   ? Object.keys(grid).reduce(
