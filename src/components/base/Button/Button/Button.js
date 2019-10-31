@@ -21,6 +21,8 @@ const propTypes = {
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   /** Custom styles */
   className: PropTypes.string,
+  /** Revert effect direction */
+  reverseEffect: PropTypes.bool,
   /** Button color present */
   color: PropTypes.oneOf(['default', 'primary', 'secondary', 'gradient']),
 };
@@ -30,15 +32,23 @@ const defaultProps = {
   tag: 'button',
   className: null,
   color: 'default',
+  reverseEffect: false,
 };
 
 const Button = ({
-  classes, children, tag: Com, color, className, ...rest
+  classes,
+  children,
+  tag: Com,
+  color,
+  className,
+  reverseEffect,
+  ...rest
 }) => {
   const buttonAttributes = { ...rest };
   buttonAttributes.className = classNames(
     classes.root,
     classes[color],
+    reverseEffect ? 'reverse' : '',
     className,
   );
   if (Com !== 'button') {

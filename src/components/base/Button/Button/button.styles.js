@@ -32,6 +32,10 @@ export default {
       '& $reveal': { width: '100%' },
       '& $children': { marginLeft: 8 },
     },
+    '&.reverse': {
+      '& $reveal': { left: 'unset', right: 0 },
+      '&:hover $children': { marginLeft: 0, marginRight: 8 },
+    },
   },
   reveal: {
     top: 0,

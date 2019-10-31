@@ -1,4 +1,5 @@
 import COLORS from './colors';
+import BREAKPOINTS from './breakpoints';
 
 const primary = '#6e8efb';
 const secondary = '#a777e3';
@@ -11,6 +12,7 @@ export default {
     primary,
     secondary,
   },
+  breakpoints: BREAKPOINTS,
   transition,
   boxShadow,
 };

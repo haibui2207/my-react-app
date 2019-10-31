@@ -1,5 +1,5 @@
 import Home from '../containers/Home';
-import SignIn from '../containers/auth/SignIn/SignIn';
+import SignIn from '../containers/auth/SignIn';
 import SignUp from '../containers/auth/SignUp';
 
 const paths = {

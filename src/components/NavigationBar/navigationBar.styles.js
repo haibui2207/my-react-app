@@ -3,8 +3,14 @@ import { hexToRgbA } from '../../utils';
 
 export default {
   root: {
-    padding: 0,
+    top: 0,
+    left: 0,
+    zIndex: 9999,
+    width: '100%',
     marginBottom: 45,
+    position: 'fixed',
+    padding: [60, 60, 0],
+    transition: THEME.transition,
     justifyContent: 'space-between',
     fontFamily: '"Lobster", cursive, Roboto, "sans-serif"',
   },
@@ -41,5 +47,8 @@ export default {
     padding: '0 !important',
     color: THEME.color.black,
     transition: THEME.transition,
+  },
+  [`@media (max-width: ${THEME.breakpoints.maxMd}px)`]: {
+    root: { padding: [20, 20, 0] },
   },
 };
