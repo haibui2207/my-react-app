@@ -8,9 +8,9 @@ export default {
       border: '1px solid transparent',
     },
     to: {
-      boxShadow: `0px 5px 40px 5px ${hexToRgbA(THEME.color.black, 0.75)}`,
-      backgroundColor: hexToRgbA(THEME.color.black, 0.15),
-      border: `1px solid ${hexToRgbA(THEME.color.black, 0.1)}`,
+      boxShadow: `0px 5px 40px 5px ${hexToRgbA(THEME.colors.black, 0.75)}`,
+      backgroundColor: hexToRgbA(THEME.colors.black, 0.15),
+      border: `1px solid ${hexToRgbA(THEME.colors.black, 0.1)}`,
     },
   },
   root: {
@@ -25,7 +25,7 @@ export default {
     marginBottom: 50,
     cursor: 'default',
     userSelect: 'none',
-    color: THEME.color.white,
+    color: THEME.colors.white,
   },
   button: {
     marginTop: 30,

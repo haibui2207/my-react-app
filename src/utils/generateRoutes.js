@@ -1,6 +1,10 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router';
 
+import { revealComponent } from '../HOCs';
+
+import generateId from './generateId';
+
 /**
  * Generate routes
  * @param routes is an object extends from RouteProps and RedirectProps
@@ -13,12 +17,20 @@ const generateRoutes = (routes) => {
     return null;
   }
 
-  return routes.map(({ title, isRedirect, ...rest }) => {
+  return routes.map(({
+    title, isRedirect, component, ...rest
+  }) => {
     if (isRedirect) {
       return <Redirect key={title} {...rest} />;
     }
 
-    return <Route key={title || rest.path} {...rest} />;
+    return (
+      <Route
+        key={generateId()}
+        component={revealComponent(component)}
+        {...rest}
+      />
+    );
   });
 };
 

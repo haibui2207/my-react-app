@@ -13,7 +13,7 @@ const labelWrapperStyles = {
   position: 'absolute',
   pointerEvents: 'none',
   transition: THEME.transition,
-  borderBottom: `2px solid ${hexToRgbA(THEME.color.black, 0.6)}`,
+  borderBottom: `2px solid ${hexToRgbA(THEME.colors.black, 0.6)}`,
   '&:after': {
     width: '100%',
     zIndex: 1,
@@ -23,7 +23,7 @@ const labelWrapperStyles = {
     display: 'block',
     position: 'absolute',
     transition: THEME.transition,
-    borderBottom: `2px solid ${THEME.color.lightBlue}`,
+    borderBottom: `2px solid ${THEME.colors.lightBlue}`,
   },
 };
 
@@ -32,14 +32,14 @@ const labelContentStyles = {
   left: 0,
   position: 'absolute',
   transition: THEME.transition,
-  color: `${hexToRgbA(THEME.color.black, 0.6)}`,
+  color: `${hexToRgbA(THEME.colors.black, 0.6)}`,
 };
 
 const labelFocusEffect = {
   '& $labelContent': {
     top: -12,
     fontSize: 12,
-    color: THEME.color.lightBlue,
+    color: THEME.colors.lightBlue,
   },
   '&:after': { transform: 'scale(1)' },
 };

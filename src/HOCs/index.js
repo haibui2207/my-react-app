@@ -1,2 +1,2 @@
 export { default as loadLazyComponent } from './loadLazyComponent';
-export { default as scrollToLoadComponent } from './scrollToLoadComponent';
+export { default as revealComponent } from './revealComponent';

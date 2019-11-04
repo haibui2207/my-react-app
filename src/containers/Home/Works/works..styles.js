@@ -2,9 +2,8 @@ export default {
   works: {
     height: '100%',
     display: 'flex',
-    paddingLeft: '16vw',
+    margin: [0, '15vw', 0, '16vw'],
     width: 'max-content',
-    paddingRight: '15vw',
   },
   card: {
     width: '34vw',

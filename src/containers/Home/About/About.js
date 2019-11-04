@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import injectSheet from 'react-jss';
 
 import { Button } from '../../../components/base/Button';
@@ -7,7 +8,7 @@ import { Button } from '../../../components/base/Button';
 import styles from './about.styles';
 
 const Home = ({ classes }) => (
-  <div id="about" className={classes.about}>
+  <div id="about" className={classNames(classes.about, 'animate')}>
     <h1 className={classes.aboutTitle}>Designing</h1>
     <h1 className={classes.aboutTitle}>Solutions,</h1>
     <h1 className={classes.aboutTitle}>Delevering</h1>

@@ -44,24 +44,10 @@ export default {
     height: '100%',
     position: 'absolute',
     transition: THEME.transition,
-    backgroundColor: THEME.color.pink,
+    backgroundColor: THEME.colors.pink,
   },
   children: { transition: THEME.transition, zIndex: 2 },
   default: {
-    ...renderButton(THEME.color.white, THEME.color.black),
+    ...renderButton(THEME.colors.white, THEME.colors.black),
   },
-  // primary: {
-  //   ...renderButton(THEME.color.white, THEME.color.primary),
-  // },
-  // secondary: {
-  //   ...renderButton(THEME.color.white, THEME.color.secondary),
-  // },
-  // gradient: {
-  //   ...renderButton(
-  //     THEME.color.white,
-  //     `
-  //    linear-gradient(135deg,${THEME.color.primary}, ${THEME.color.secondary})
-  //     `,
-  //   ),
-  // },
 };

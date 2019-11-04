@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -6,7 +9,7 @@ import LightSpeed from 'react-reveal/LightSpeed';
 
 import logo from '../../assets/images/logo.svg';
 import logoWithText from '../../assets/images/logo-with-text.svg';
-import { useEventListener, generateId } from '../../utils';
+import { useEventListener, generateId, scrollToElement } from '../../utils';
 
 import styles from './navigationBar.styles';
 
@@ -16,9 +19,9 @@ const propTypes = {
 };
 
 const navItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Works', href: '#works' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '#about', id: 'about' },
+  { label: 'Works', href: '#works', id: 'works' },
+  { label: 'Contact', href: '#contact', id: 'contact' },
 ];
 
 const NavigationBar = ({ classes }) => {
@@ -36,8 +39,8 @@ const NavigationBar = ({ classes }) => {
     <LightSpeed right duration={2800}>
       <nav className={classNames('navbar', 'navbar-expand-sm', classes.root)}>
         <a
-          href="/#"
           className={classNames('navbar-brand', classes.logoWrapper)}
+          onClick={() => scrollToElement('about')}
         >
           <img
             alt="Logo"
@@ -77,12 +80,12 @@ const NavigationBar = ({ classes }) => {
                   navItemActive === index && 'active',
                   classes.navItem,
                 )}
-                onClick={() => setNavItemActive(index)}
+                onClick={() => {
+                  scrollToElement(item.id);
+                  setNavItemActive(index);
+                }}
               >
-                <a
-                  className={classNames('nav-link', classes.navLink)}
-                  href={item.href}
-                >
+                <a className={classNames('nav-link', classes.navLink)}>
                   {item.label}
                 </a>
               </li>

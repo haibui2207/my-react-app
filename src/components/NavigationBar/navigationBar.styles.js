@@ -18,6 +18,7 @@ export default {
     width: 62,
     height: 45,
     padding: 0,
+    cursor: 'pointer',
     position: 'relative',
   },
   logo: {
@@ -31,21 +32,23 @@ export default {
   navBar: { alignItems: 'center' },
   navItem: {
     transition: THEME.transition,
-    borderBottom: `2px solid ${hexToRgbA(THEME.color.black, 0)}`,
+    borderBottom: `2px solid ${hexToRgbA(THEME.colors.black, 0)}`,
     '&.active': {
-      borderBottom: `2px solid ${hexToRgbA(THEME.color.black, 0.2)}`,
-      '& $navLink': { color: THEME.color.pink },
+      borderBottom: `2px solid ${hexToRgbA(THEME.colors.black, 0.2)}`,
+      '& $navLink': { color: THEME.colors.pink },
+      '&:hover $navLink': { color: THEME.colors.pink },
     },
     '&:hover': {
-      borderBottom: `2px solid ${hexToRgbA(THEME.color.black)}`,
-      '& $navLink': { color: THEME.color.pink },
+      borderBottom: `2px solid ${hexToRgbA(THEME.colors.black)}`,
+      '& $navLink': { color: THEME.colors.pink },
     },
     '& + $navItem': { marginLeft: 32 },
   },
   navLink: {
     fontSize: 14,
+    cursor: 'pointer',
     padding: '0 !important',
-    color: THEME.color.black,
+    color: THEME.colors.black,
     transition: THEME.transition,
   },
   [`@media (max-width: ${THEME.breakpoints.maxMd}px)`]: {

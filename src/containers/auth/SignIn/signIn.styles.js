@@ -10,7 +10,7 @@ export default {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    boxShadow: `inset 0px 0px 0px 2000px ${hexToRgbA(THEME.color.gray, 0.4)}`,
+    boxShadow: `inset 0px 0px 0px 2000px ${hexToRgbA(THEME.colors.gray, 0.4)}`,
     fontFamily: '"Lobster", cursive, Roboto, "sans-serif"',
   },
   form: {

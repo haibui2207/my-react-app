@@ -18,15 +18,18 @@ const propTypes = {
 };
 const defaultProps = {
   style: null,
+  className: '',
 };
 
-const Card = ({ classes, titles, subTitle, imageSrc, style, className }) => (
+const Card = ({
+  classes, titles, subTitle, imageSrc, style, className,
+}) => (
   <div
     className={classNames(classes.root, className)}
     style={{ backgroundImage: `url(${imageSrc})`, ...style }}
   >
     <div className={classes.cardTitles}>
-      {titles.map(title => (
+      {titles.map((title) => (
         <h1 key={generateId()} className={classes.title}>
           {title}
         </h1>

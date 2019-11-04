@@ -11,14 +11,14 @@ export default {
     borderRadius: [0, 20],
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundColor: THEME.color.gray,
+    backgroundColor: THEME.colors.gray,
     transition: THEME.transition,
     '&:hover': {
       boxShadow: `inset 0px 0px 0px 2000px ${hexToRgbA(
-        THEME.color.black,
+        THEME.colors.black,
         0.2,
       )}`,
-      '& $title, & $subTitle': { color: THEME.color.white },
+      '& $title, & $subTitle': { color: THEME.colors.white },
     },
   },
   cardTitles: {

@@ -20,7 +20,7 @@ export default {
     position: 'absolute',
     pointerEvents: 'none',
     boxShadow: `inset 0px 0px 0px 2000px ${hexToRgbA(
-      THEME.color.lightBlue,
+      THEME.colors.lightBlue,
       0.4,
     )}`,
   },
@@ -41,11 +41,11 @@ export default {
       transform: 'translate(-50%, -50%)',
     },
     '&:before': {
-      backgroundColor: THEME.color.primary,
+      backgroundColor: THEME.colors.primary,
       animation: '$beforeEffect .8s ease-in-out infinite alternate',
     },
     '&:after': {
-      backgroundColor: THEME.color.secondary,
+      backgroundColor: THEME.colors.secondary,
       animation: '$afterEffect .8s ease-in-out infinite alternate',
     },
   },

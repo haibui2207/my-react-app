@@ -1,7 +1,7 @@
 import isIE from './isIE';
 import isEdge from './isEdge';
 
-const defaultScrollOffset = 50;
+const defaultScrollOffset = 60;
 const defaultScrollOptions = { behavior: 'smooth' };
 
 const getElementOffsetTop = (id) => {
@@ -11,15 +11,18 @@ const getElementOffsetTop = (id) => {
     return null;
   }
 
-  const bodyRect = document.body.getBoundingClientRect().top;
-  const elementRect = element.getBoundingClientRect().top;
+  // Currently this app using scroll horizontal so
+  // if using scroll vertical change left to top
+  const bodyRect = document.body.getBoundingClientRect().left;
+  const elementRect = element.getBoundingClientRect().left;
+  console.log(element.getBoundingClientRect());
 
   return elementRect - bodyRect;
 };
 
 const smoothScrollForOldBrowsers = (offsetPosition) => {
-  const { pageYOffset } = window;
-  const distance = Math.max(0, offsetPosition) - pageYOffset;
+  const { pageXOffset } = window;
+  const distance = Math.max(0, offsetPosition) - pageXOffset;
   const startTime = new Date().getTime();
   const defaultDuration = 999;
   const duration = Math.min(Math.abs(distance), defaultDuration);
@@ -29,7 +32,7 @@ const smoothScrollForOldBrowsers = (offsetPosition) => {
     const nextPosition = Math.max(
       0,
       Math.floor(
-        pageYOffset
+        pageXOffset
           + distance
             * (speed < 0.5 ? 2 * speed ** 2 : speed * (4 - speed * 2) - 1),
       ),
@@ -49,9 +52,9 @@ const scrollToElement = (
 ) => {
   const elementPosition = getElementOffsetTop(id);
 
-  if (elementPosition === null) {
-    return;
-  }
+  console.log(elementPosition);
+
+  if (elementPosition === null) return;
 
   const maxScrollOffset = document.documentElement.scrollHeight
     - document.documentElement.clientHeight

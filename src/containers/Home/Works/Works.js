@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import injectSheet from 'react-jss';
 
 import Card from '../../../components/Card';
-import fondo1Image from '../../../assets/images/works/fondo1.jpg';
-import fondo2Image from '../../../assets/images/works/fondo2.jpg';
-import fondo3Image from '../../../assets/images/works/fondo3.jpg';
-import fondo4Image from '../../../assets/images/works/fondo4.jpg';
-import fondo5Image from '../../../assets/images/works/fondo5.jpg';
+import fondo1Image from '../../../assets/images/home/works/fondo1.jpg';
+import fondo2Image from '../../../assets/images/home/works/fondo2.jpg';
+import fondo3Image from '../../../assets/images/home/works/fondo3.jpg';
+import fondo4Image from '../../../assets/images/home/works/fondo4.jpg';
+import fondo5Image from '../../../assets/images/home/works/fondo5.jpg';
 
 import styles from './works..styles';
 

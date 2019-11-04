@@ -4,8 +4,8 @@ export default {
   '@keyframes aboutTitleEffect': {
     '0%': { color: 'transparent' },
     '50%': { color: 'transparent' },
-    '70%': { color: THEME.color.black },
-    '100%': { color: THEME.color.black },
+    '70%': { color: THEME.colors.white },
+    '100%': { color: THEME.colors.white },
   },
   '@keyframes aboutTitleBeforeEffect': {
     '0%': { width: 0, left: 0 },
@@ -26,6 +26,21 @@ export default {
     display: 'flex',
     overflow: 'hidden',
     flexDirection: 'column',
+    '&.animate': {
+      '& $aboutTitle': {
+        animation: '$aboutTitleEffect 1s linear 0.5s 1 forwards',
+        '&:before': {
+          animation: 'inherit',
+          animationName: '$aboutTitleBeforeEffect',
+        },
+        '&:nth-child(2)': { animationDelay: '0.6s' },
+        '&:nth-child(3)': { animationDelay: '0.7s' },
+        '&:nth-child(4)': { animationDelay: '0.8s' },
+      },
+      '& $subTitle': {
+        animation: '$subTitleBeforeEffect 0.5s linear 1.4s 1 forwards',
+      },
+    },
   },
   aboutTitle: {
     fontSize: 45,
@@ -39,26 +54,21 @@ export default {
     position: 'relative',
     transition: THEME.transition,
     fontFamily: '"Lobster", cursive, Roboto, "sans-serif"',
-    animation: '$aboutTitleEffect 1s linear 0.5s 1 forwards',
     '&:before': {
+      left: 0,
+      width: 0,
       top: '50%',
       content: '""',
       height: '105%',
       display: 'block',
-      animation: 'inherit',
       position: 'absolute',
       transform: 'translateY(-50%)',
-      backgroundColor: THEME.color.black,
-      animationName: '$aboutTitleBeforeEffect',
+      backgroundColor: THEME.colors.white,
     },
-    '&:nth-child(2)': { animationDelay: '0.6s' },
-    '&:nth-child(3)': { animationDelay: '0.7s' },
-    '&:nth-child(4)': { animationDelay: '0.8s' },
   },
   subTitle: {
     opacity: 0,
     position: 'relative',
-    animation: '$subTitleBeforeEffect 0.5s linear 1.4s 1 forwards',
   },
   description: {
     fontSize: 30,
@@ -66,9 +76,10 @@ export default {
     marginBottom: 48,
     cursor: 'default',
     userSelect: 'none',
+    color: THEME.colors.white,
     '& strong:hover': {
       cursor: 'pointer',
-      color: THEME.color.pink,
+      color: THEME.colors.pink,
       transition: THEME.transition,
     },
   },
@@ -82,10 +93,11 @@ export default {
     fontWeight: 'bold',
     letterSpacing: 1.5,
     alignItems: 'center',
+    color: THEME.colors.white,
     minWidth: 'max-content',
-    color: THEME.color.black,
     textTransform: 'uppercase',
-    '&:hover': { color: THEME.color.pink },
+    transition: THEME.transition,
+    '&:hover': { color: THEME.colors.pink },
   },
   [`@media (max-width: ${THEME.breakpoints.maxXXl}px)`]: {
     aboutTitle: { fontSize: 35 },
@@ -94,10 +106,7 @@ export default {
   [`@media (max-width: ${THEME.breakpoints.maxMd}px)`]: {
     aboutTitle: { fontSize: 25 },
     description: { fontSize: 16, marginBottom: 32 },
-    btnGroup: {
-      transform: 'scale(0.7)',
-      transformOrigin: 'top left',
-    },
+    btnGroup: { transform: 'scale(0.7)', transformOrigin: 'top left' },
   },
   [`@media (max-width: ${THEME.breakpoints.maxSm}px)`]: {
     about: {

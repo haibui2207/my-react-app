@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?f1gler');
-  src:  url('fonts/icomoon.eot?f1gler#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?f1gler') format('truetype'),
-    url('fonts/icomoon.woff?f1gler') format('woff'),
-    url('fonts/icomoon.svg?f1gler#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?94ait4');
+  src:  url('fonts/icomoon.eot?94ait4#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?94ait4') format('truetype'),
+    url('fonts/icomoon.woff?94ait4') format('woff'),
+    url('fonts/icomoon.svg?94ait4#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-i {
+i, .icomoon-liga {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -19,6 +19,16 @@ i {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
@@ -42,4 +52,10 @@ i {
 }
 .icon-medium:before {
   content: "\e904";
+}
+.icon-eye:before {
+  content: "\e9ce";
+}
+.icon-eye-blocked:before {
+  content: "\e9d1";
 }

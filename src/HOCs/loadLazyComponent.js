@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from 'react';
+
 import Loading from '../components/base/Loading';
 
 /**
@@ -11,7 +12,7 @@ import Loading from '../components/base/Loading';
  *
  */
 const loadLazyComponent = (callback, timeout = 999) => {
-  const Com = lazy(
+  const Component = lazy(
     () => new Promise((resolve) => {
       setTimeout(() => resolve(callback()), timeout);
     }),
@@ -19,7 +20,7 @@ const loadLazyComponent = (callback, timeout = 999) => {
 
   return (props) => (
     <Suspense fallback={<Loading />}>
-      <Com {...props} />
+      <Component {...props} />
     </Suspense>
   );
 };
