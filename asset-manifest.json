@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/react-immovables/static/css/main.b9040a5a.chunk.css",
+    "main.js": "/react-immovables/static/js/main.96e9ca8a.chunk.js",
+    "main.js.map": "/react-immovables/static/js/main.96e9ca8a.chunk.js.map",
+    "runtime-main.js": "/react-immovables/static/js/runtime-main.ff557c74.js",
+    "runtime-main.js.map": "/react-immovables/static/js/runtime-main.ff557c74.js.map",
+    "static/css/2.0624914a.chunk.css": "/react-immovables/static/css/2.0624914a.chunk.css",
+    "static/js/2.961a5808.chunk.js": "/react-immovables/static/js/2.961a5808.chunk.js",
+    "static/js/2.961a5808.chunk.js.map": "/react-immovables/static/js/2.961a5808.chunk.js.map",
+    "static/js/3.6def02df.chunk.js": "/react-immovables/static/js/3.6def02df.chunk.js",
+    "static/js/3.6def02df.chunk.js.map": "/react-immovables/static/js/3.6def02df.chunk.js.map",
+    "index.html": "/react-immovables/index.html",
+    "precache-manifest.61b1e2e004716d8b868f4341d0f0208a.js": "/react-immovables/precache-manifest.61b1e2e004716d8b868f4341d0f0208a.js",
+    "service-worker.js": "/react-immovables/service-worker.js",
+    "static/css/2.0624914a.chunk.css.map": "/react-immovables/static/css/2.0624914a.chunk.css.map",
+    "static/css/main.b9040a5a.chunk.css.map": "/react-immovables/static/css/main.b9040a5a.chunk.css.map",
+    "static/media/fondo1.jpg": "/react-immovables/static/media/fondo1.60eac4c6.jpg",
+    "static/media/fondo2.jpg": "/react-immovables/static/media/fondo2.1ba7debd.jpg",
+    "static/media/fondo3.jpg": "/react-immovables/static/media/fondo3.caa660b7.jpg",
+    "static/media/fondo4.jpg": "/react-immovables/static/media/fondo4.67abde11.jpg",
+    "static/media/fondo5.jpg": "/react-immovables/static/media/fondo5.47978c51.jpg",
+    "static/media/style.css": "/react-immovables/static/media/icomoon.b2fec262.woff",
+    "static/media/login-bg.jpg": "/react-immovables/static/media/login-bg.1e80540b.jpg",
+    "static/media/logo-with-text.svg": "/react-immovables/static/media/logo-with-text.6589d122.svg",
+    "static/media/logo.svg": "/react-immovables/static/media/logo.41c740a5.svg",
+    "static/media/video-bg.mp4": "/react-immovables/static/media/video-bg.07e1eba9.mp4",
+    "static/media/video-poster.jpg": "/react-immovables/static/media/video-poster.be11212b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ff557c74.js",
+    "static/css/2.0624914a.chunk.css",
+    "static/js/2.961a5808.chunk.js",
+    "static/css/main.b9040a5a.chunk.css",
+    "static/js/main.96e9ca8a.chunk.js"
+  ]
+}
