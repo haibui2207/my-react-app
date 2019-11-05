@@ -37,6 +37,9 @@ Setting up basic project with bootstrap and redux saga
 
 > 1. http://en.momentomultimedia.com/
 
+# # Host react app on Github page
+> https://github.com/gitname/react-gh-pages
+
 # # How to run?
 
 > 1. Clone repositiory
