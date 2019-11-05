@@ -29,7 +29,6 @@ const SignInForm = ({ classes, submit }) => {
           ))}
           <Button
             className={classes.button}
-            color="gradient"
             onClick={() => submit({ name: 'abc' })}
           >
             Submit

@@ -61,10 +61,11 @@ const inputFocusEffect = {
 
 export default {
   root: {
+    fontSize: 20,
     width: '100%',
     marginBottom: 20,
     position: 'relative',
-    fontSize: 20,
+    fontFamily: '"Lobster", cursive, Roboto, "sans-serif"',
   },
   labelWrapper: {
     ...labelWrapperStyles,

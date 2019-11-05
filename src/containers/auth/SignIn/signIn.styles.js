@@ -11,7 +11,6 @@ export default {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     boxShadow: `inset 0px 0px 0px 2000px ${hexToRgbA(THEME.colors.gray, 0.4)}`,
-    fontFamily: '"Lobster", cursive, Roboto, "sans-serif"',
   },
   form: {
     width: '100%',

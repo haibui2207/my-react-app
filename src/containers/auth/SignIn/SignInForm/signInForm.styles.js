@@ -26,6 +26,7 @@ export default {
     cursor: 'default',
     userSelect: 'none',
     color: THEME.colors.white,
+    fontFamily: '"Lobster", cursive, Roboto, "sans-serif"',
   },
   button: {
     marginTop: 30,
