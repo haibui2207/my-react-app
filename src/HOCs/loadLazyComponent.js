@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 
-import Loading from '../components/base/Loading';
+import { LoadingDoodle } from '../components/base/Loading';
 
 /**
  * Async loading component
@@ -19,7 +19,7 @@ const loadLazyComponent = (callback, timeout = 999) => {
   );
 
   return (props) => (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={<LoadingDoodle />}>
       <Component {...props} />
     </Suspense>
   );

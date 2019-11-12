@@ -1,5 +1,5 @@
-import { THEME } from '../../../constants';
-import { hexToRgbA } from '../../../utils';
+import { THEME } from '../../../../constants';
+import { hexToRgbA } from '../../../../utils';
 
 export default {
   '@keyframes beforeEffect': {

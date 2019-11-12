@@ -78,6 +78,7 @@
     "test": "node scripts/test.js",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
+    "lint": "eslint src/**/*.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
