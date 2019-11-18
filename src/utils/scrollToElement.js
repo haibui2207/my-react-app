@@ -11,6 +11,8 @@ const getElementOffsetTop = (id, horizontal = false) => {
     return null;
   }
 
+  // Currently this app using scroll horizontal so
+  // if using scroll vertical change left to top
   const bodyRect = document.body.getBoundingClientRect()[
     horizontal ? 'left' : 'top'
   ];
@@ -21,9 +23,11 @@ const getElementOffsetTop = (id, horizontal = false) => {
   return elementRect - bodyRect;
 };
 
-const smoothScrollForOldBrowsers = (offsetPosition) => {
-  const { pageXOffset } = window;
-  const distance = Math.max(0, offsetPosition) - pageXOffset;
+const smoothScrollForOldBrowsers = (offsetPosition, horizontal = false) => {
+  const { pageXOffset, pageYOffset } = window;
+  const offset = horizontal ? pageXOffset : pageYOffset;
+
+  const distance = Math.max(0, offsetPosition) - offset;
   const startTime = new Date().getTime();
   const defaultDuration = 999;
   const duration = Math.min(Math.abs(distance), defaultDuration);
@@ -33,7 +37,7 @@ const smoothScrollForOldBrowsers = (offsetPosition) => {
     const nextPosition = Math.max(
       0,
       Math.floor(
-        pageXOffset
+        offset
           + distance
             * (speed < 0.5 ? 2 * speed ** 2 : speed * (4 - speed * 2) - 1),
       ),
@@ -48,24 +52,23 @@ const smoothScrollForOldBrowsers = (offsetPosition) => {
 
 const defaultOptions = {
   offset: defaultScrollOffset,
-  options: { ...defaultScrollOptions },
+  options: defaultScrollOptions,
   horizontal: false,
 };
 
-const scrollToElement = (id, options = defaultOptions) => {
-  const elementPosition = getElementOffsetTop(id);
+const scrollToElement = (id, configs) => {
+  const { offset, options, horizontal } = { ...defaultOptions, ...configs };
+  const elementPosition = getElementOffsetTop(id, horizontal);
 
   if (elementPosition === null) return;
 
   const maxScrollOffset = document.documentElement.scrollHeight
     - document.documentElement.clientHeight
     - 1;
-  const offsetPosition = Math.min(
-    elementPosition - options.offset, maxScrollOffset,
-  );
+  const offsetPosition = Math.min(elementPosition - offset, maxScrollOffset);
 
   if (isIE || isEdge) {
-    smoothScrollForOldBrowsers(offsetPosition);
+    smoothScrollForOldBrowsers(offsetPosition, horizontal);
   } else {
     window.scrollTo({
       ...options,

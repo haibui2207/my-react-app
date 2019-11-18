@@ -40,7 +40,7 @@ const NavigationBar = ({ classes }) => {
       <nav className={classNames('navbar', 'navbar-expand-sm', classes.root)}>
         <a
           className={classNames('navbar-brand', classes.logoWrapper)}
-          onClick={() => scrollToElement('about')}
+          onClick={() => scrollToElement('about', { horizontal: true })}
         >
           <img
             alt="Logo"
@@ -81,7 +81,7 @@ const NavigationBar = ({ classes }) => {
                   classes.navItem,
                 )}
                 onClick={() => {
-                  scrollToElement(item.id);
+                  scrollToElement(item.id, { horizontal: true });
                   setNavItemActive(index);
                 }}
               >
