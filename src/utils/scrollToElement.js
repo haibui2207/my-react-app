@@ -44,7 +44,7 @@ const smoothScrollForOldBrowsers = (offsetPosition, horizontal = false) => {
     );
 
     window.scrollTo(0, nextPosition);
-    if (Math.floor(offsetPosition) >= nextPosition) {
+    if (Math.floor(offsetPosition) === nextPosition) {
       clearInterval(timer);
     }
   }, 10);
